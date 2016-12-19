@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+	<title>Quizzes</title>
+    <!--<link rel='stylesheet' type='text/css' href='stylesPWS/style.css' /> -->
+	<link rel='stylesheet' type='text/css' href='stylesPWS/signUp.css' /> 
+	<link rel='stylesheet' 
+		   type='text/css' 
+		   media='only screen and (min-width: 530px) and (min-device-width: 481px)'
+		   href='stylesPWS/wide.css' />
+	<link rel='stylesheet' 
+		   type='text/css' 
+		   media='only screen and (max-width: 480px)'
+		   href='stylesPWS/smartphone.css' />
+	<script type="text/javascript" src="js/Geo.js"></script>
+
+  </head>
+  <body>
+  <div id='page-wrap' "background-color:lightblue;" >
+	<header class='main' id='h1'>
+      <span class="right"><a href="signUp.html">SignUp</a>&nbsp;&nbsp;</span>
+      <span class="right"><a href="SignIn.php">LogIn</a> </span>
+      <span class="right" style="display:none;"><a href="/logout">LogOut</a> </span>
+	<h2>Quiz: crazy questions</h2>
+    </header>
+	<nav class='main' id='n1' role='navigation'>
+		<span><a href='layout.php'>Home</a></span>
+		<span><a href='ShowQuizzes.php'>Quizzes</a></span>
+		<span><a href='credits.html'>Credits</a></span>
+	</nav>
+    <section class="main" id="s1">
+    
+	
+	<div>
+		<p ALIGN=left><b><u>Deiturak:</u></b> I&ntilde;igo Sanz eta Olatz Romeo</p><br/> 
+		<p ALIGN=left><b><u>Espezialitatea:</u></b> Konputazioa eta Konputagailuen Ingenieritza</p><br/>
+		<p ALIGN=left><b><u>Argazkiak:</u></b><br/>
+			<img SRC="irudiak/koala_ecalypt.jpg" WIDTH=170 HEIGHT=120 ALT="Argazkia">
+			<!--br/><br/-->&nbsp;
+			<img SRC="irudiak/koala.jpg" WIDTH=170 HEIGHT=120 ALT="Argazkia"><br/>
+		</p><br/>
+		<p ALIGN=left> <b><u>Beste informaziorik:</b></u> Ez</p> <br/>
+		<br/>
+		<p><button onclick="geoAurkitu()">Erakutsi nere posizioa!</button></p>
+		<div id="map"></div><br/>
+		<br/>
+		</div>
+    </section>
+	<footer class='main' id='f1'>
+		<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
+		<a href='https://github.com'>Link GITHUB</a>
+	</footer>
+</div>
+</body>
+</html>

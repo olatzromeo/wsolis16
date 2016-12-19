@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+		<title>Aurkitu Erabiltzailea</title>
+	        <link rel='stylesheet' type='text/css' href='stylesPWS/userInform.css'/>
+		<link rel='stylesheet' type='text/css' media='only screen and (min-width: 530px) and (min-device-width: 481px)' href='stylesPWS/wide.css' />
+		<link rel='stylesheet' type='text/css' media='only screen and (max-width: 480px)' href='stylesPWS/smartphone.css' />		
+		
+           <script type="text/javascript">
+
+			function erabiltzaileaBilatu(){
+				var aurkitua=false;
+                                var xmlDoc = document.getElementById('erabDatuak').contentDocument;
+				var posta = document.getElementById('posta').value;
+				var listaemail= xmlDoc.getElementsByTagName('eposta');
+				var listaizen= xmlDoc.getElementsByTagName('izena');
+				var listabiz1= xmlDoc.getElementsByTagName('abizena1');
+				var listabiz2= xmlDoc.getElementsByTagName('abizena2');
+				var listatelef= xmlDoc.getElementsByTagName('telefonoa');
+
+				  for(var i = 0; i < listaemail.length;i++){
+
+					 if(posta==listaemail[i].childNodes[0].nodeValue){
+
+						aurkitua=true;
+						var izena = listaizen[i].childNodes[0].nodeValue;
+						var abizenak = listabiz1[i].childNodes[0].nodeValue + " "+ listabiz2[i].childNodes[0].nodeValue;
+						var telefonoa = listatelef[i].childNodes[0].nodeValue;
+
+					
+                                                document.getElementById("izena").value=izena;
+                                                document.getElementById("abizenak").value=abizenak;
+                                                document.getElementById("telefonoa").value=telefonoa;
+                                               
+						break;
+					 }
+				 }
+
+				 if(!aurkitua){
+					alert("Idatzi den e-posta ez dago erregistratua.Sartu berriro");
+					document.getElementById("izena").value="";
+					document.getElementById("abizenak").value="";
+					document.getElementById("telefonoa").value="";
+				 }
+			}
+		  </script>
+	</head>
+	<body>
+	<div id='page-wrap'>
+	<header class='main' id='h1'>
+                 <span class="right"><a href="SignUp.html">SignUp</a>&nbsp;&nbsp;</span>
+                 <span class="right"><a href="SignIn.php">LogIn</a> </span>
+                 <span class="right" style="display:none;"><a href="/logout">LogOut</a> </span>
+	         <h2>Quiz: crazy questions</h2>
+        </header>
+	<nav class='main' id='n1' role='navigation'>
+		<span><a href='layout.php'>Home</a></span>
+		<span><a href='ShowQuizzes.php'>Quizzes</a></span>
+		<span><a href='credits.html'>Credits</a></span>
+	</nav>
+    <section class="main" id="s1">
+		<OBJECT id="erabDatuak" data="xml/erabiltzaileak.xml" type="text/xml" style="display:none"> </OBJECT>
+			<form action="" method="post">
+			    <p align=left><font color="RED">* derrigorrez bete beharreko datuak</font></p> <br/><br/>
+				<div id="gorputza">
+					<h1>Erabiltzailea Bilatu</h1>
+					<br/>
+				        <label class="label">Eposta Elektronikoa<font color="RED">*</font>: </label><br/>
+						<input type="text" id="posta" name="emaila" value="" class="form-input" placeholder="adibidea003@ehu.eus" size="21" required ><br/>
+					<br/>
+						<label class="label">Izena: </label><br/>
+						<p> <input type="text" id="izena" disabled="true" size="21" class="form-input"></p>
+					<br/>
+						<label class="label">Abizenak: </label><br/>
+						<input type="text" id="abizenak" name="abizenak" value="" class="form-input" disabled="true" size="21" ><br/>
+					<br/>
+						<label class="label">Telefono Zenbakia: </label><br/>
+						<input type="text" id="telefonoa" name="telefonoa" value="" class="form-input" disabled="true" size="21"><br/>
+						
+					<br/>
+					<p> <input id="bilatuBotoia" align="right" type="button" value="Bilatu" onclick="javascript:erabiltzaileaBilatu()"></p>
+					<br/>
+			</form>
+	</section>
+	<footer class='main' id='f1'>
+		<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
+		<a href='https://github.com'>Link GITHUB</a>
+	</footer>
+	</body>
+</html>

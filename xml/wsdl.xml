@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+			xmlns:tns="http://wsjiparsar.esy.es/webZerbitzuak/egiaztatuMatrikula.php?wsdl" 
+			xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+			xmlns="http://schemas.xmlsoap.org/wsdl/" 
+			targetNamespace="http://wsjiparsar.esy.es/webZerbitzuak/egiaztatuMatrikula.php?wsdl">
+	<types>
+		<xsd:schema targetNamespace="http://wsjiparsar.esy.es/webZerbitzuak/egiaztatuMatrikula.php?wsdl">
+			<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+			<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+		</xsd:schema>
+	</types>
+	<message name="egiaztatuERequest">
+		<part name="x" type="xsd:string"/>
+	</message>
+	<message name="egiaztatuEResponse">
+		<part name="z" type="xsd:string"/>
+	</message>
+	<portType name="MatrikulakPortType">
+		<operation name="egiaztatuE">
+			<input message="tns:egiaztatuERequest"/>
+			<output message="tns:egiaztatuEResponse"/>
+		</operation>
+	</portType>
+	<binding name="MatrikulakBinding" type="tns:MatrikulakPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="egiaztatuE">
+			<soap:operation soapAction="http://wsjiparsar.esy.es/webZerbitzuak/egiaztatuMatrikula.php/egiaztatuE" style="rpc"/>
+			<input>
+				<soap:body use="encoded" namespace="http://wsjiparsar.esy.es/webZerbitzuak/egiaztatuMatrikula.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body use="encoded" namespace="http://wsjiparsar.esy.es/webZerbitzuak/egiaztatuMatrikula.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Matrikulak">
+		<port name="MatrikulakPort" binding="tns:MatrikulakBinding">
+			<soap:address location="http://wsjiparsar.esy.es/webZerbitzuak/egiaztatuMatrikula.php"/>
+		</port>
+	</service>
+</definitions>

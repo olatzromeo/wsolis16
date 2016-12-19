@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+	<title>Quizzes</title>
+	<link rel='stylesheet' type='text/css' href='stylesPWS/signUp.css' /> 
+	<link rel='stylesheet' type='text/css' media='only screen and (min-width: 530px) and (min-device-width: 481px)' href='stylesPWS/wide.css' />
+	<link rel='stylesheet' type='text/css' media='only screen and (max-width: 480px)' href='stylesPWS/smartphone.css'/>
+		   
+	<script type="text/javascript" src="js/signUp.js" ></script>		
+  </head>
+  <body>
+  <div id='page-wrap'>
+	  <header class='main' id='h1'>
+		  <span class="right"><a href="signUp.html">SignUp</a>&nbsp;&nbsp;</span>
+		  <span class="right"><a href="SignIn.php">LogIn</a> </span>
+		  <span class="right" style="display:none;"><a href="/logout">LogOut</a> </span>
+		<h2>Quiz: Crazy questions</h2>
+		</header>
+		<nav class='main' id='n1' role='navigation'>
+			<span><a href='layout.php'>Home</a></span>
+			<span><a href='ShowQuizzes.php'>Show Quizzes</a></span>
+			<span><a href='credits.html'>Credits</a></span>
+		</nav>
+		<section class="main" id="s1">
+		
+		  
+  <form id="erregistro" name="erregistro" action="EnrollWithImage.php" method="POST"  enctype="multipart/form-data">
+	  
+	   <legend class="legend">Erregistroa</legend> <p ALIGN=center ><font color="RED">* derrigorrez bete beharreko datuak</font></p> <br/><br/>
+			
+                        <div id="guraso">
+			
+                          	<label class="label">Izena<font color="RED">*</font>: </label>
+				<input type="text" size="30" id="Izena" name="izena" value="" class="form-input" required><br/>
+			
+	  		<br/>
+			
+                <label class="label">Abizenak<font color="RED">*</font>: </label>
+				<input type="text" size="30" id="abizenak" name="abizenak" value="" class="form-input" required><br/>
+			
+	  		<br/>
+                <label class="label">Eposta Elektronikoa<font color="RED">*</font>:</label>
+				<input type="text" size="30" id="emaila" name="emaila" value="" class="form-input" required onBlur="emailaBalidatu()"><br/><br/>
+                   	<br/>
+                                <label class="label" id="pass">Pasahitza<font color="RED">*</font>: </label>
+				<input type="password" size="30" id="pasahitza" name="pasahitza" value="" required class="form-input" ><br/>
+                        <br/>
+				<label class="label">Egiaztatu Pasahitza<font color="RED">*</font>:</label>
+				<input type="password" size="30" id="pasahitza2" name="pasahitza2" value="" required class="form-input"  onBlur="pasahitzaBerdinak()"><br/><br/>
+                                <span id="emaitza1" style="background-color:#ceff99"></span><br/>
+	 		<br/>
+                                <label class="label">Ticketik baduzu?</label>
+				<input type="text" size="30" id="ticketa" name="ticketa" value="" class="form-input"><br/>
+                        <br/>
+				<label class="label">Telefono Zenbakia<font color="RED">*</font>: </label>
+				<input type="text" size="30" id="telefonoa" name="telefonoa" value=""  required  class="form-input"  onBlur="telefonoaBalidatu()"><br/><br/>
+			<br/>
+				<label class="label">Espezialitatea<font color="RED">*</font>: </label>
+				<select id ="espezialitatea" name="espezialitatea" required tag ="espezialitate" class="form-select">
+					  <option value="Aukeratu" onclick="DeSelect()">--Aukeratu--</option>
+					  <option value="Konputagailuen Ingenieritza" onclick="DeSelect()">Konputagailuen Ingenieritza</option>
+					  <option value="Konputazioa" onclick="DeSelect()">Konputazioa</option>
+					  <option value="Software Ingeneritza" onclick="DeSelect()">Software Ingeneritza</option>
+					  <option value="Besterik" onclick="espezialitateaSelect()">Besterik</option>
+				</select><br/>
+
+			<br/>
+				<label id="BesterikLabel" class="label" hidden>Espezialitatea?<font color="RED">*</font> </label>
+				<input type="text" size="30" id="besterik" name="besterik" value="" class="form-input" hidden><br/>
+			<br/>
+				<label class="label">Interesa duzun teknologiak eta erremintak: </label><br/>
+				<textarea id="interesa" class="textarea" rows="6" cols="60"> </textarea><br/>		
+			<br/>
+				<label class="label">Argazkirik sartu nahi?(.jpg, .jpeg, .gif edo .png formatuak bakarrik) 16KB max :</label>
+                                <input type="File" name="argazkia" id="argazkia" accept="image/jpeg">
+                                <div id="argazkizatia"></div>                          
+                                <!--input type="file" accept="image/*" name="argazkia" id="argazkia" size="30" onChange="argazkiaAurreikusi(this)"/><br/>
+				<img id="aurreikusi" src="#"/ style="display: none" width="120px" height="150px"><br/-->
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/><input type="submit" value="Balidatu" ALIGN="left" onclick="erregistroOsoaBalidatu()"><br/>
+			<br/>
+				
+			</div>
+	   
+	</form>
+
+    </section>
+	<footer class='main' id='f1'>
+		<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
+		<a href='https://github.com'>Link GITHUB</a>
+	</footer>
+</div>
+</body>
+</html>
