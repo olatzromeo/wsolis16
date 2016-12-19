@@ -1,9 +1,9 @@
 <?php
 
 $dbhost = "mysql.hostinger.es";
-$dbuser = "u809326886_olis";
-$dbpass = "olarome13";
-$dbizen = "u809326886_quiz";
+$dbuser = "u301318292_roux";
+$dbpass = "incautosTX13";
+$dbizen = "u301318292_proba";
 
 $esteka = mysqli_connect ($dbhost, $dbuser, $dbpass, $dbizen) or die ("Konekxioa ez da gauzatu MySQLra");
 mysqli_select_db($esteka, $dbizen) or die ("Errorea datu basearen konekxioarekin");

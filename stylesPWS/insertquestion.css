@@ -1,4 +1,4 @@
-@charset "utf-8";
+@@charset "utf-8";
 * 	      {margin: 0; padding: 0;}
 
 body {
@@ -6,12 +6,12 @@ body {
    font: 16px Arial, sans-serif;
 }
 
-#page-wrap		{margin: 1% auto; color: black;}
+#page-wrap		{margin: 1% auto; color: white;}
 #page-wrap >.main 	{border: 4px solid #FFF8DC; padding: 1%; margin-bottom: 1px; color: black;}
 
-section > div	   {padding: 20px;float: left; width: 30%;}
-header		   {background: #FFF8DC; text-align: center;font: 100% sans-serif;}
-nav		   {background: #cbeded; text-align: left;font: 20px Arial, sans-serif; }
+section > div {padding: 20px;float: left; width: 30%;}
+header	   {background: #FFF8DC; text-align: center;font: 100% sans-serif;}
+nav		   {background: #cbeded; text-align: left;font: 22px Arial, sans-serif; }
 footer		   {background: #FFF8DC; text-align: center;font: 100% sans-serif;}
 
 nav span{ 
@@ -51,4 +51,9 @@ footer {
     text-align: center;
     font: 100% sans-serif;
 }
- 	
+ 
+.submit-button{
+	float: left;
+	width: 8%;
+
+}
